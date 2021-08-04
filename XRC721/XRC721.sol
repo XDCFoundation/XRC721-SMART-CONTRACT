@@ -9,7 +9,6 @@ pragma solidity ^0.5.0;
 	
 	/**
 	 * @title XRC721 Non-Fungible Token Standard basic implementation
-	 * @dev see https://eips.XDC.org/EIPS/eip-721
 	 */
 	contract XRC721 is XRC165, IXRC721 {
 	    using SafeMath for uint256;

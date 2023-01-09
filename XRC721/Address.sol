@@ -1,4 +1,5 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
 
 /**
  * @dev Collection of functions related to the address type,

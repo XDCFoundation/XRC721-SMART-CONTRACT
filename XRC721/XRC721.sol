@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 	
 import "./IXRC721.sol";
 import "./IXRC721Receiver.sol";
-import "./SafeMath.sol";
+import "./Strings.sol";
 import "./Address.sol";
 import "./Counters.sol";
 import "./XRC165.sol";
@@ -12,7 +12,7 @@ import "./XRC165.sol";
 * @title XRC721 Non-Fungible Token Standard basic implementation
 */
 contract XRC721 is XRC165, IXRC721 {
-	using SafeMath for uint256;
+	using Strings for uint256;
 	using Address for address;
 	using Counters for Counters.Counter;
 

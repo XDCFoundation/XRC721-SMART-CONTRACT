@@ -6,7 +6,7 @@ pragma solidity ^0.8.17;
 * @dev Interface for any contract that wants to support safeTransfers
 * from XRC721 asset contracts.
 */
-contract IXRC721Receiver {
+interface IXRC721Receiver {
 	/**
 	* @notice Handle the receipt of an NFT
 	* @dev The XRC721 smart contract calls this function on the recipient
@@ -21,6 +21,6 @@ contract IXRC721Receiver {
 	* @param data Additional data with no specified format
 	* @return bytes4 `bytes4(keccak256("onXRC721Received(address,address,uint256,bytes)"))`
 	*/
-	function onXRC721Received(address operator, address from, uint256 tokenId, bytes memory data) virtual public returns (bytes4);
+	function onXRC721Received(address operator, address from, uint256 tokenId, bytes memory data) external returns (bytes4);
 }
 

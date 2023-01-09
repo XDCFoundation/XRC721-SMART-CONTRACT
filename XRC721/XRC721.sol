@@ -55,17 +55,17 @@ contract XRC721 is XRC165, IXRC721 {
 	string private _symbol;
 
 		
-	constructor () public {
-		// register the supported interfaces to conform to XRC721 via XRC165
-		_name = "XDC721";
-		_symbol = "721";
-		_registerInterface(_INTERFACE_ID_XRC721);
-	}
-	function balanceOf(address owner) public view returns (uint256) {
-		require(owner != address(0), "XRC721: balance query for the zero address");
+	constructor(string memory name_, string memory symbol_) {
+        // register the supported interfaces to conform to XRC721 via XRC165
+        _name = name_;
+        _symbol = symbol_;
+        _registerInterface(_INTERFACE_ID_XRC721);
+    }
+    function balanceOf(address owner) public view returns (uint256) {
+        require(owner != address(0), "XRC721: balance query for the zero address");
 
-		return _ownedTokensCount[owner].current();
-	}
+        return _ownedTokensCount[owner].current();
+    }
 	function name() public view returns (string memory){
 		return _name;
 	}

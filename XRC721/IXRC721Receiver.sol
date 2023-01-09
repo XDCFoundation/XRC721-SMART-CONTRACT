@@ -21,7 +21,6 @@ contract IXRC721Receiver {
 	* @param data Additional data with no specified format
 	* @return bytes4 `bytes4(keccak256("onXRC721Received(address,address,uint256,bytes)"))`
 	*/
-	function onXRC721Received(address operator, address from, uint256 tokenId, bytes memory data)
-	public returns (bytes4);
+	function onXRC721Received(address operator, address from, uint256 tokenId, bytes memory data) virtual public returns (bytes4);
 }
 

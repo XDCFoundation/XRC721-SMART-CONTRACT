@@ -9,7 +9,7 @@ import "./IXRC165.sol";
 * Contracts may inherit from this and call `_registerInterface` to declare
 * their support of an interface.
 */
-contract XRC165 is IXRC165 {
+abstract contract XRC165 is IXRC165 {
 	/*
 	* bytes4(keccak256('supportsInterface(bytes4)')) == 0x01ffc9a7
 	*/
@@ -20,18 +20,18 @@ contract XRC165 is IXRC165 {
 	*/
 	mapping(bytes4 => bool) private _supportedInterfaces;
 
-	constructor () internal {
-		// Derived contracts need only register support for their own interfaces,
-		// we register support for XRC165 itself here
-		_registerInterface(_INTERFACE_ID_XRC165);
-	}
+	// constructor () internal {
+	// 	// Derived contracts need only register support for their own interfaces,
+	// 	// we register support for XRC165 itself here
+	// 	_registerInterface(_INTERFACE_ID_XRC165);
+	// }
 
 	/**
 	* @dev See `IXRC165.supportsInterface`.
 	*
 	* Time complexity O(1), guaranteed to always use less than 30 000 gas.
 	*/
-	function supportsInterface(bytes4 interfaceId) external view returns (bool) {
+	function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) {
 		return _supportedInterfaces[interfaceId];
 	}
 
